@@ -482,6 +482,12 @@ dotnet ef database update
 ```bash
 dotnet ef migrations list
 ```
+
+#### Aplicar migrations
+
+```bash
+dotnet ef database update
+```
 ---
 ### Restaurar dependências
 
@@ -499,12 +505,6 @@ dotnet build
 
 ```bash
 dotnet run
-```
-
-### Aplicar migrations
-
-```bash
-dotnet ef database update
 ```
 
 ---
