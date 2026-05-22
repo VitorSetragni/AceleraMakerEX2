@@ -196,26 +196,22 @@ Antes de executar o projeto, é necessário ter instalado:
 
 - .NET SDK 8
 - Git
+- Entity Framework Core CLI
 - PostgreSQL, caso queira usar banco local
 - Docker, caso queira executar o SonarQube
 
-Para verificar se o .NET está instalado:
-
-```bash
-dotnet --version
-```
 
 > **OBS:** O banco de dados já está conectado a uma instância online do PostgreSQL para facilitar a validação do projeto pelos instrutores.
+> O projeto utiliza ASP.NET Core Web API, que já está incluído no .NET SDK 8.
 
 ---
 
 ### 1. Clonar o repositório
 
 ```bash
-git clone LINK_DO_REPOSITORIO
-cd AceleraMakerEX2
+git clone https://github.com/VitorSetragni/AceleraMakerEX2.git
 ```
-
+###OBS:### lembre de entrar na pasta BlogPessoal para os proximos passos
 ---
 
 ### 2. Restaurar as dependências
@@ -232,27 +228,6 @@ dotnet restore
 dotnet ef database update
 ```
 
-Esse comando cria ou atualiza as tabelas no banco de dados:
-
-```txt
-Usuarios
-Temas
-Postagens
-__EFMigrationsHistory
-```
-
-Caso o comando `dotnet ef` não funcione, instale a ferramenta do Entity Framework:
-
-```bash
-dotnet tool install --global dotnet-ef
-```
-
-Ou atualize, caso já esteja instalada:
-
-```bash
-dotnet tool update --global dotnet-ef
-```
-
 ---
 
 ### 4. Compilar o projeto
@@ -263,7 +238,7 @@ dotnet build
 
 ---
 
-### 5. Executar a API
+### 5. Executar o projeto
 
 ```bash
 dotnet run
@@ -293,23 +268,13 @@ Caso a porta seja diferente, use a porta exibida no terminal após executar `dot
 
 O projeto utiliza **PostgreSQL** com Entity Framework Core.
 
-Para facilitar a avaliação acadêmica, a connection string do banco online já está configurada no arquivo:
+Para facilitar a avaliação, a connection string do banco online já está configurada no arquivo:
 
 ```txt
 appsettings.json
 ```
 
-Exemplo de configuração:
-
-```json
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Host=SEU_HOST;Port=5432;Database=SEU_BANCO;Username=SEU_USUARIO;Password=SUA_SENHA;SSL Mode=Require;Trust Server Certificate=true"
-  }
-}
-```
-
-> Em projetos reais, não é recomendado deixar senhas no `appsettings.json`. O ideal seria usar variáveis de ambiente ou `user-secrets`. Neste projeto, a conexão pode estar configurada diretamente no arquivo apenas para fins acadêmicos e de avaliação.
+> Em projetos reais, não é recomendado deixar senhas no `appsettings.json`. Neste projeto, a conexão esta configurada diretamente no arquivo apenas para fins acadêmicos e de avaliação.
 
 ---
 
@@ -393,12 +358,7 @@ Fluxo de autenticação:
 4. O token deve ser enviado nas requisições protegidas.
 5. A API valida o token antes de permitir o acesso.
 
-No Swagger, clique em **Authorize** e informe o token no formato:
-
-```txt
-Bearer SEU_TOKEN_AQUI
-```
----
+No Swagger, clique em **Authorize** e informe o token
 
 ## Como testar a API
 
@@ -497,45 +457,11 @@ O usuário responsável pela postagem é identificado automaticamente pelo token
 
 ## SonarQube
 
-O SonarQube foi utilizado para análise de qualidade do código-fonte.
+O SonarQube foi utilizado para analisar a qualidade do código-fonte do projeto.
 
 ---
 
-### Rodar SonarQube com Docker
-
-```bash
-docker run -d --name sonarqube -p 9000:9000 sonarqube:community
-```
-
-Acesse:
-
-```txt
-http://localhost:9000
-```
-
----
-
-### Instalar o SonarScanner para .NET
-
-```bash
-dotnet tool install --global dotnet-sonarscanner
-```
-
----
-
-### Rodar análise do projeto
-
-```bash
-dotnet sonarscanner begin /k:"blog-pessoal-dotnet" /d:sonar.host.url="http://localhost:9000" /d:sonar.token="Aqui vai seu token com as aspas"
-
-dotnet build
-
-dotnet sonarscanner end /d:sonar.token="Aqui vai seu token com as aspas"
-```
-
-Após a análise, o relatório pode ser visualizado no painel do SonarQube.
-
----
+## Comandos úteis
 
 ## Migrations
 
@@ -556,11 +482,7 @@ dotnet ef database update
 ```bash
 dotnet ef migrations list
 ```
-
 ---
-
-## Comandos úteis
-
 ### Restaurar dependências
 
 ```bash
