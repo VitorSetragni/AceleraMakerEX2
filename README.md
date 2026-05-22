@@ -463,21 +463,21 @@ O SonarQube foi utilizado para analisar a qualidade do código-fonte do projeto.
 
 ## Comandos úteis
 
-## Migrations
+### Migrations
 
-### Criar uma nova migration
+#### Criar uma nova migration
 
 ```bash
 dotnet ef migrations add NomeDaMigration
 ```
 
-### Aplicar as migrations no banco
+#### Aplicar as migrations no banco
 
 ```bash
 dotnet ef database update
 ```
 
-### Listar migrations existentes
+#### Listar migrations existentes
 
 ```bash
 dotnet ef migrations list
