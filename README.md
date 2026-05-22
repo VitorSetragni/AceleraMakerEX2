@@ -417,7 +417,6 @@ Exemplo de corpo:
   "nome": "Vitor",
   "email": "vitor@email.com",
   "senha": "123456",
-  "foto": "https://exemplo.com/foto.png"
 }
 ```
 

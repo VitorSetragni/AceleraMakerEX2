@@ -33,8 +33,7 @@ namespace BlogPessoal.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Nome = table.Column<string>(type: "text", nullable: false),
                     Email = table.Column<string>(type: "text", nullable: false),
-                    Senha = table.Column<string>(type: "text", nullable: false),
-                    Foto = table.Column<string>(type: "text", nullable: true)
+                    Senha = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {

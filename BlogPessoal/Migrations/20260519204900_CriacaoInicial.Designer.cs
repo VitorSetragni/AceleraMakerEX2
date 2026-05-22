@@ -88,9 +88,6 @@ namespace BlogPessoal.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Foto")
-                        .HasColumnType("text");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("text");

@@ -41,8 +41,7 @@ namespace BlogPessoal.Services{
             Usuario usuario = new Usuario(
                 usuarioDTO.Nome,
                 usuarioDTO.Email,
-                usuarioDTO.Senha,
-                usuarioDTO.Foto
+                usuarioDTO.Senha
             );
 
             PasswordHasher<Usuario> passwordHasher = new PasswordHasher<Usuario>();
@@ -70,7 +69,6 @@ namespace BlogPessoal.Services{
 
             usuario.Nome = usuarioDTO.Nome;
             usuario.Email = usuarioDTO.Email;
-            usuario.Foto = usuarioDTO.Foto;
 
             PasswordHasher<Usuario> passwordHasher = new PasswordHasher<Usuario>();
             usuario.Senha = passwordHasher.HashPassword(usuario, usuarioDTO.Senha);
@@ -162,8 +160,7 @@ namespace BlogPessoal.Services{
             return new UsuarioRespostaDTO(
                 usuario.Id,
                 usuario.Nome,
-                usuario.Email,
-                usuario.Foto
+                usuario.Email
             );
         }
     }
