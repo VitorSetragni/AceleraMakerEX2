@@ -15,6 +15,6 @@ namespace BlogPessoal.DTOs{
         [MinLength(6)]
         public string Senha { get; set; } = string.Empty;
 
-        public string? Foto { get; set; }
+        
     }
 }
