@@ -124,7 +124,6 @@ Campos principais:
 - Nome
 - Email
 - Senha
-- Foto
 
 ### Tema
 
