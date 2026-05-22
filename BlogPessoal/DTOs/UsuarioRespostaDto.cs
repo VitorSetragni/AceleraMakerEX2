@@ -8,16 +8,14 @@ namespace BlogPessoal.DTOs{
 
         public string Email { get; set; } = string.Empty;
 
-        public string? Foto { get; set; }
 
         public UsuarioRespostaDTO(){
         }
 
-        public UsuarioRespostaDTO(long id, string nome, string email, string? foto){
+        public UsuarioRespostaDTO(long id, string nome, string email){
             Id = id;
             Nome = nome;
             Email = email;
-            Foto = foto;
         }
     }
 }
