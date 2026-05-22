@@ -18,7 +18,6 @@ namespace BlogPessoal.Models
         [MinLength(6)]
         public string Senha { get; set; } = string.Empty;
 
-        public string? Foto { get; set; }
 
         // Construtor vazio utilizado pelo Entity Framework.
         public Usuario()
@@ -26,12 +25,11 @@ namespace BlogPessoal.Models
             
         }
 
-        public Usuario(string nome, string email, string senha, string? foto)
+        public Usuario(string nome, string email, string senha)
         {
             Nome = nome;
             Email = email;
             Senha = senha;
-            Foto = foto;
             
         }
     }
